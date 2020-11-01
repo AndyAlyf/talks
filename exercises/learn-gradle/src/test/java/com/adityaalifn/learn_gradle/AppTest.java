@@ -7,8 +7,19 @@ import org.junit.Test;
 import static org.junit.Assert.*;
 
 public class AppTest {
+    String name = "Adit";
+
     @Test public void testAppHasAGreeting() {
+        String name = "Adit";
         App classUnderTest = new App();
-        assertNotNull("app should have a greeting", classUnderTest.getGreeting());
+        assertNotNull("app should have a greeting", classUnderTest.getGreeting(name));
+    }
+
+    @Test public void testAppHasAGreetingWithName() {
+        String name = "Adit";
+        App classUnderTest = new App();
+        String expectedMessage = String.format("Hello, %s!", name);
+
+        assertEquals(expectedMessage, classUnderTest.getGreeting(name));
     }
 }

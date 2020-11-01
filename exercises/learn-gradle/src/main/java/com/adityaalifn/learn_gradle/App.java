@@ -4,11 +4,12 @@
 package com.adityaalifn.learn_gradle;
 
 public class App {
-    public String getGreeting() {
-        return "Hello world.";
+    public String getGreeting(String name) {
+        return String.format("Hello, %s!", name);
     }
 
     public static void main(String[] args) {
-        System.out.println(new App().getGreeting());
+        String name = "Adit";
+        System.out.println(new App().getGreeting(name));
     }
 }
